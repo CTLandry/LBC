@@ -53,8 +53,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.6.0.726" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />
+    <PackageReference Include="Xamarin.Forms">
+      <Version>4.6.0.726</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -89,7 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LBC\LBC.csproj">
-      <Project>{90B10E5B-5BD3-416F-AF99-9DE0241E9FE3}</Project>
+      <Project>{EC9738C5-FC14-48EE-8AC0-1C84B2B8358B}</Project>
       <Name>LBC</Name>
     </ProjectReference>
   </ItemGroup>
