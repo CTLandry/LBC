@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 
-namespace LBC.ViewModels
+namespace LBC.ViewModels.Base
 {
     public abstract class BaseViewModel : INotifyPropertyChanged
     {

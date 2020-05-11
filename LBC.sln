@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBC.iOS", "LBC.iOS\LBC.iOS.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBC", "LBC\LBC.csproj", "{90B10E5B-5BD3-416F-AF99-9DE0241E9FE3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBC.WebAPI", "LBC.WebAPI\LBC.WebAPI.csproj", "{805A0850-550C-4218-AC0F-A1B27E0B6AD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,5 +55,11 @@ Global
 		{90B10E5B-5BD3-416F-AF99-9DE0241E9FE3}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{90B10E5B-5BD3-416F-AF99-9DE0241E9FE3}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{90B10E5B-5BD3-416F-AF99-9DE0241E9FE3}.Release|iPhone.Build.0 = Release|Any CPU
+		{805A0850-550C-4218-AC0F-A1B27E0B6AD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{805A0850-550C-4218-AC0F-A1B27E0B6AD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{805A0850-550C-4218-AC0F-A1B27E0B6AD9}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{805A0850-550C-4218-AC0F-A1B27E0B6AD9}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{805A0850-550C-4218-AC0F-A1B27E0B6AD9}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{805A0850-550C-4218-AC0F-A1B27E0B6AD9}.Release|iPhone.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 EndGlobal

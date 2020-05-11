@@ -1,8 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using LBC.Services;
-using LBC.Views;
 
 namespace LBC
 {
@@ -12,8 +10,6 @@ namespace LBC
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 
