@@ -19,5 +19,8 @@
     <Folder Include="ViewModels\Base\" />
     <Folder Include="Data\" />
     <Folder Include="TinyIoC\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Base\" />
+    <Folder Include="Views\" />
   </ItemGroup>
 </Project>
