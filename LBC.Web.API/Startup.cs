@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,7 +24,6 @@ namespace LBC.Web.API
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
@@ -32,9 +32,34 @@ namespace LBC.Web.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "LBC API", Version = "v1" });
             });
+
+            services.AddAuthentication(o =>
+            {
+                o.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            })
+                .AddCookie()
+                .AddFacebook(fb =>
+                {
+                    fb.AppId = Configuration["FacebookAppId"];
+                    fb.AppSecret = Configuration["FacebookAppSecret"];
+                    fb.SaveTokens = true;
+                })
+                .AddGoogle(g =>
+                {
+                    g.ClientId = Configuration["GoogleClientId"];
+                    g.ClientSecret = Configuration["GoogleClientSecret"];
+                    g.SaveTokens = true;
+                })
+                .AddMicrosoftAccount(ms =>
+                {
+                    ms.ClientId = Configuration["MicrosoftClientId"];
+                    ms.ClientSecret = Configuration["MicrosoftClientSecret"];
+                    ms.SaveTokens = true;
+                });
+              
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+       
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
