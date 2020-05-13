@@ -1,10 +1,14 @@
 ﻿using System;
 namespace LBC.Services.Base
 {
-    public enum BaseResultStatus
+    public class BaseResultStatus
     {
-        Success,
-        Failed,
-        Exception
+        public enum Status
+        {
+            Success,
+            Failed,
+            Exception
+        }
     }
+   
 }

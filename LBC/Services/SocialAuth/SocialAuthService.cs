@@ -17,7 +17,7 @@ namespace LBC.Services.SocialAuth
         {
         }
 
-        public async Task<SocialAuthResult<BaseResultStatus>> Authenticate(string scheme)
+        public async Task<T> Authenticate<T>(string scheme) where T : SocialAuthResult
         {
             try
             {
@@ -30,7 +30,7 @@ namespace LBC.Services.SocialAuth
 
                 var token = webAuthResult?.AccessToken ?? webAuthResult?.IdToken;
 
-                return new SocialAuthResult<BaseResultStatus>(BaseResultStatus.Success, webAuthResult);
+                return new SocialAuthResult(BaseResultStatus.Status.Failed, webAuthResult);
             }
             catch (Exception ex)
             {

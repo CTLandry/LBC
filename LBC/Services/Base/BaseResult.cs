@@ -1,11 +1,11 @@
 ﻿using System;
 namespace LBC.Services.Base
 {
-    public abstract class BaseResult<TStatus>
+    public abstract class BaseResult 
     {
-        public readonly TStatus Status;
+        public readonly BaseResultStatus.Status Status;
 
-        public BaseResult(TStatus status)
+        public BaseResult(BaseResultStatus.Status status)
         {
             this.Status = status;
         }
