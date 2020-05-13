@@ -23,12 +23,5 @@
     <Folder Include="Services\Base\" />
     <Folder Include="Views\" />
     <Folder Include="Services\SocialAuth\" />
-    <Folder Include="Services\Exceptions\" />
-    <Folder Include="Services\Results\" />
-    <Folder Include="Services\Exceptions\Base\" />
-    <Folder Include="Services\Exceptions\SocialAuth\" />
-    <Folder Include="Services\Results\Base\" />
-    <Folder Include="Services\Exceptions\Common\" />
-    <Folder Include="Services\Exceptions\Common\Enumerations\" />
   </ItemGroup>
 </Project>
