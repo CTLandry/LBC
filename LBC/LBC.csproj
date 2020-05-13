@@ -23,5 +23,7 @@
     <Folder Include="Services\Base\" />
     <Folder Include="Views\" />
     <Folder Include="Services\SocialAuth\" />
+    <Folder Include="Services\SocialAuth\Results\" />
+    <Folder Include="Services\SocialAuth\Exceptions\" />
   </ItemGroup>
 </Project>
