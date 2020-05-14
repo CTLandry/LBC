@@ -7,6 +7,6 @@ namespace LBC.Services.SocialAuth
 {
     public interface ISocialAuth
     {
-        Task<SocialAuthResult> Authenticate(string scheme);
+        Task<SocialAuthResult<TResult, TMessage>> Authenticate<TResult, TMessage>(string scheme);
     }
 }

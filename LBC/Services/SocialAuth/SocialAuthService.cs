@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using LBC.Services.Base;
 using Xamarin.Essentials;
-using LBC.Services.SocialAuth.Exceptions;
 using LBC.Services.SocialAuth.Results;
 
 namespace LBC.Services.SocialAuth
@@ -17,7 +16,7 @@ namespace LBC.Services.SocialAuth
         {
         }
 
-        public async Task<SocialAuthResult> Authenticate(string scheme)
+        public async Task<SocialAuthResult<TResult, TMessage>> Authenticate<TResult, TMessage>(string scheme)
         {
             try
             {
@@ -35,7 +34,7 @@ namespace LBC.Services.SocialAuth
             catch (Exception ex)
             {
                 Console.WriteLine("Auth the foook!");
-                return new SocialAuthResult(BaseResultStatus.Status.Exception, webAuthResult);
+                return new SocialAuthResult<AuthResult.Status, String>(AuthResult.Status.Exception, "Client Error - Auth");
             }
         }
 
