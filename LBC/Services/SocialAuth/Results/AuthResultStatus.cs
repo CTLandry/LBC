@@ -5,7 +5,7 @@ namespace LBC.Services.SocialAuth.Results
 {
     public class AuthResultStatus : BaseResultStatus
     {
-        public new enum Status
+        public enum Status
         {
             Success,
             Failed,

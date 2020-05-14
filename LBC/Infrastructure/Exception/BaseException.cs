@@ -1,5 +1,5 @@
 ﻿using System;
-namespace LBC.Services.Exceptions.Base
+namespace LBC.Infrastructure.Exception
 {
     public abstract class BaseException : SystemException
     {

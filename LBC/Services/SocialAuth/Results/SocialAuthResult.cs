@@ -13,5 +13,7 @@ namespace LBC.Services.SocialAuth.Results
         {
             this.AuthResult = authResult;
         }
+
+       
     }
 }
