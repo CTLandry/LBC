@@ -1,7 +1,5 @@
-﻿using System;
-using System.Threading.Tasks;
-using LBC.Services.Base;
-using LBC.Services.SocialAuth.Results;
+﻿using System.Threading.Tasks;
+using LBC.Domain.SocialAuth.Results;
 
 namespace LBC.Services.SocialAuth
 {

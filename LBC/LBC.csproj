@@ -20,11 +20,8 @@
     <Folder Include="Data\" />
     <Folder Include="TinyIoC\" />
     <Folder Include="Services\" />
-    <Folder Include="Services\Base\" />
     <Folder Include="Views\" />
     <Folder Include="Services\SocialAuth\" />
-    <Folder Include="Services\SocialAuth\Results\" />
-    <Folder Include="Services\SocialAuth\Exceptions\" />
     <Folder Include="Infrastructure\" />
     <Folder Include="Infrastructure\Exception\" />
     <Folder Include="Infrastructure\Result\" />
@@ -33,5 +30,6 @@
     <Folder Include="Domain\SocialAuth\" />
     <Folder Include="Domain\SocialAuth\Exceptions\" />
     <Folder Include="Domain\SocialAuth\Results\" />
+    <Folder Include="Domain\Base\" />
   </ItemGroup>
 </Project>
