@@ -1,6 +1,6 @@
 ﻿using System;
-namespace LBC.Services.SocialAuth.Results
-{
+namespace LBC.Domain.SocialAuth.Results
+{ 
     public static class AuthResult
     {
         public enum Status

@@ -1,13 +1,11 @@
-﻿using System;
-using LBC.Infrastructure.Result;
-using LBC.Services.Base;
+﻿using LBC.Services.Base;
 using Xamarin.Essentials;
 
-namespace LBC.Services.SocialAuth.Results
+namespace LBC.Domain.SocialAuth.Results
 {
     public class SocialAuthResult<TResult, TMessage> : BaseServiceResult<TResult, TMessage>
     {
-        public readonly WebAuthenticatorResult AuthResult;
+        public readonly WebAuthenticatorResult WebAuthResult;
 
         public SocialAuthResult(TResult result, TMessage message) : base(result, message)
         {
@@ -16,7 +14,7 @@ namespace LBC.Services.SocialAuth.Results
 
         public SocialAuthResult(TResult result, TMessage message, WebAuthenticatorResult webAuthResult) : base(result, message)
         {
-            AuthResult = webAuthResult;
+            WebAuthResult = webAuthResult;
         }
     }
 }

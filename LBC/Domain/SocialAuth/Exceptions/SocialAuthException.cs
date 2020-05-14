@@ -1,7 +1,7 @@
 ﻿using System;
 using LBC.Services.Base;
 
-namespace LBC.Services.SocialAuth.Exceptions
+namespace LBC.Domain.SocialAuth.Exceptions
 {
     public class SocialAuthException<T> : BaseServiceException<T>
     {

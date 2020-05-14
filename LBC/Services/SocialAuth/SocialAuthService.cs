@@ -16,7 +16,7 @@ namespace LBC.Services.SocialAuth
         {
         }
 
-        public async Task<SocialAuthResult<TResult, TMessage>> Authenticate<TResult, TMessage>(string scheme)
+        public async Task<SocialAuthResult<AuthResult.Status, string>> Authenticate<TResult, TMessage>(string scheme)
         {
             try
             {
@@ -29,12 +29,12 @@ namespace LBC.Services.SocialAuth
 
                 var token = webAuthResult?.AccessToken ?? webAuthResult?.IdToken;
 
-                return new SocialAuthResult(AuthResultStatus.Status.Success, webAuthResult);
+                return new SocialAuthResult<AuthResult.Status, string>(AuthResult.Status.Success, "Success", webAuthResult);
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Auth the foook!");
-                return new SocialAuthResult<AuthResult.Status, String>(AuthResult.Status.Exception, "Client Error - Auth");
+                return new SocialAuthResult<AuthResult.Status, string>(AuthResult.Status.Exception, "Client Error - Auth");
             }
         }
 
@@ -43,6 +43,9 @@ namespace LBC.Services.SocialAuth
             
         }
 
-     
+        Task<SocialAuthResult<TResult, TMessage>> ISocialAuth.Authenticate<TResult, TMessage>(string scheme)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

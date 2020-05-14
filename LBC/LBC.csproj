@@ -29,5 +29,9 @@
     <Folder Include="Infrastructure\Exception\" />
     <Folder Include="Infrastructure\Result\" />
     <Folder Include="Infrastructure\Logging\" />
+    <Folder Include="Domain\" />
+    <Folder Include="Domain\SocialAuth\" />
+    <Folder Include="Domain\SocialAuth\Exceptions\" />
+    <Folder Include="Domain\SocialAuth\Results\" />
   </ItemGroup>
 </Project>
