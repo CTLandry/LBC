@@ -1,5 +1,5 @@
 ﻿using System;
-namespace LBC.Services.Base
+namespace LBC.Domain.Base
 {
     public abstract class BaseDomainLogic
     {
