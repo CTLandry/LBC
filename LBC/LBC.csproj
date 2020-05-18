@@ -5,6 +5,13 @@
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD;NETSTANDARD2_0;DEV</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType></DebugType>
+    <DefineConstants>TRACE;RELEASE;NETSTANDARD;NETSTANDARD2_0;PROD</DefineConstants>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.6.0.772" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
@@ -39,5 +46,13 @@
     <Folder Include="Configuration\" />
     <Folder Include="Configuration\Settings\" />
     <Folder Include="Configuration\Configs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Configuration\Configs\config-dev.json" />
+    <None Remove="Configuration\Configs\config-prod.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Configuration\Configs\config-dev.json" />
+    <EmbeddedResource Include="Configuration\Configs\config-prod.json" />
   </ItemGroup>
 </Project>
