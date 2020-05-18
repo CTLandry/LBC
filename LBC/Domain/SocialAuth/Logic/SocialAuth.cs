@@ -1,4 +1,5 @@
 ﻿using System;
+using LBC.Domain.Base;
 using LBC.Services.Base;
 
 namespace LBC.Domain.SocialAuth.Logic

@@ -46,6 +46,12 @@
     <Folder Include="Configuration\" />
     <Folder Include="Configuration\Settings\" />
     <Folder Include="Configuration\Configs\" />
+    <Folder Include="Domain\Session\" />
+    <Folder Include="Services\Session\" />
+    <Folder Include="Domain\Session\Exceptions\" />
+    <Folder Include="Domain\Session\Logic\" />
+    <Folder Include="Domain\Session\Results\" />
+    <Folder Include="Infrastructure\Logic\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Configuration\Configs\config-dev.json" />

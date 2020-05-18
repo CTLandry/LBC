@@ -1,21 +1,25 @@
 ﻿using System;
 using System.Collections;
 using System.Threading.Tasks;
+using LBC.Services.Session;
 
 namespace LBC.Infrastructure.Logging
 {
     public class Logger : ILogger
     {
-        public Logger()
-        {
-        }
-
-        public Task LogEvent<T>(T eventName)
+        public Task LogEvent<S>(string eventName) where S : ISession
         {
             throw new NotImplementedException();
         }
 
-        public Task LogEvent<T, D>(T eventName, D data) where D : IEnumerable
+        public Task LogEvent<D>(string eventName, D data) where D : IEnumerable
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task LogEvent<D, S>(string eventName, D data, ISession session)
+            where D : IEnumerable
+            where S : ISession
         {
             throw new NotImplementedException();
         }
@@ -30,7 +34,14 @@ namespace LBC.Infrastructure.Logging
             throw new NotImplementedException();
         }
 
-        public Task LogToDebugger<T>(T exception)
+        public Task LogException<T, S>(T exception, S session, string message)
+            where T : SystemException
+            where S : ISession
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task LogToDebugger(string debugStatement)
         {
             throw new NotImplementedException();
         }

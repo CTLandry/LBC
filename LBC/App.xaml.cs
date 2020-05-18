@@ -13,6 +13,11 @@ namespace LBC
             MainPage = new AppShell();
         }
 
+        private void InitApp()
+        {
+
+        }
+
         protected override void OnStart()
         {
         }

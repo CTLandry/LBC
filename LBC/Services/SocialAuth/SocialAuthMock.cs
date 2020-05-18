@@ -4,10 +4,9 @@ using LBC.Domain.SocialAuth.Results;
 
 namespace LBC.Services.SocialAuth
 {
-    public class SocialAuthService : ISocialAuth
+    public class SocialAuthMock : ISocialAuth
     {
-        
-        public SocialAuthService()
+        public SocialAuthMock()
         {
         }
 

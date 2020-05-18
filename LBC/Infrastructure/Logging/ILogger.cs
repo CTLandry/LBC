@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Threading.Tasks;
-
+using LBC.Services.Session;
 
 namespace LBC.Infrastructure.Logging
 {
@@ -9,8 +9,13 @@ namespace LBC.Infrastructure.Logging
     {
         Task LogException<T>(T exception) where T : SystemException;
         Task LogException<T>(T exception, string message) where T : SystemException;
-        Task LogEvent<T>(T eventName);
-        Task LogToDebugger<T>(T exception);
-        Task LogEvent<T, D>(T eventName, D data) where D : IEnumerable;
+        Task LogException<T, S>(T exception, S session, string message) where T : SystemException
+                                                                        where S : ISession;
+        Task LogEvent<S>(string eventName) where S : ISession;
+        Task LogEvent<D>(string eventName, D data) where D : IEnumerable;
+        Task LogEvent<D,S>(string eventName, D data, ISession session) where D : IEnumerable
+                                                                       where S : ISession;
+        Task LogToDebugger(string debugStatement);
+        
     }
 }
