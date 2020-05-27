@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using LBC.ViewModels;
+
 using Xamarin.Forms;
 
 namespace LBC.Views
 {
-    public partial class SplashView : ContentPage
+    public partial class AuthenticationView : ContentPage
     {
-        public SplashView()
+        public AuthenticationView()
         {
             InitializeComponent();
-           
         }
     }
 }

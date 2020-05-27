@@ -55,7 +55,6 @@
     <MtouchInterpreter>-all</MtouchInterpreter>
     <ExternalConsole>false</ExternalConsole>
     <DeviceSpecificBuild></DeviceSpecificBuild>
-    <MtouchSdkVersion></MtouchSdkVersion>
     <MtouchUseLlvm></MtouchUseLlvm>
 <OnDemandResourcesInitialInstallTags></OnDemandResourcesInitialInstallTags>
 <LangVersion>Default</LangVersion>
@@ -133,6 +132,11 @@
     <BundleResource Include="Resources\xamarin_logo%402x.png" />
     <BundleResource Include="Resources\xamarin_logo%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <ImageAsset Include="Assets.xcassets\splash.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\splash.imageset\laughlinriver_nightshot.png" />
+    <ImageAsset Include="Assets.xcassets\splash.imageset\laughlinriver_nightshot-1.png" />
+    <ImageAsset Include="Assets.xcassets\splash.imageset\laughlinriver_nightshot-2.png" />
+    <ImageAsset Include="Assets.xcassets\splash.imageset\laughlinriver_nightshot-3.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -154,5 +158,8 @@
       <Project>{EC9738C5-FC14-48EE-8AC0-1C84B2B8358B}</Project>
       <Name>LBC</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\splash.imageset\" />
   </ItemGroup>
 </Project>

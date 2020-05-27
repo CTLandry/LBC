@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Reflection;
+using LBC.Services.Session;
 using TinyIoC;
 using Xamarin.Forms;
 
@@ -30,11 +31,11 @@ namespace LBC.ViewModels.Base
             _container = new TinyIoCContainer();
 
             // View models - by default, TinyIoC will register concrete classes as multi-instance.
-            //_container.Register<SplashViewmodel>();
+            _container.Register<SplashViewModel>();
            
 
             // Services - by default, TinyIoC will register interface registrations as singletons.
-            //_container.Register<INavigationService, NavigationService>();
+            _container.Register<ISession, Session>();
             
         }
 

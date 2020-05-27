@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Threading.Tasks;
+
 namespace LBC.Services.Session
 {
-    public class Session
+    public class Session : ISession
     {
-        public Session()
+        public Task<bool> SessionIsValid()
         {
+            return Task.Run(() => false);
         }
     }
 }

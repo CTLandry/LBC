@@ -1,4 +1,5 @@
 ﻿using System;
+using LBC.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace LBC
         public App()
         {
             InitializeComponent();
-            MainPage = new AppShell();
+            MainPage = new SplashView();
         }
 
         private void InitApp()
