@@ -30,27 +30,13 @@
     <Folder Include="ViewModels\Base\" />
     <Folder Include="Data\" />
     <Folder Include="TinyIoC\" />
-    <Folder Include="Services\" />
     <Folder Include="Views\" />
     <Folder Include="Infrastructure\" />
     <Folder Include="Infrastructure\Exception\" />
-    <Folder Include="Infrastructure\Result\" />
     <Folder Include="Infrastructure\Logging\" />
-    <Folder Include="Domain\" />
-    <Folder Include="Domain\SocialAuth\" />
-    <Folder Include="Domain\SocialAuth\Exceptions\" />
-    <Folder Include="Domain\SocialAuth\Results\" />
-    <Folder Include="Domain\Base\" />
-    <Folder Include="Domain\SocialAuth\Logic\" />
     <Folder Include="Configuration\" />
     <Folder Include="Configuration\Settings\" />
     <Folder Include="Configuration\Configs\" />
-    <Folder Include="Domain\Session\" />
-    <Folder Include="Services\Session\" />
-    <Folder Include="Domain\Session\Exceptions\" />
-    <Folder Include="Domain\Session\Logic\" />
-    <Folder Include="Domain\Session\Results\" />
-    <Folder Include="Infrastructure\Logic\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Configuration\Configs\config-dev.json" />
