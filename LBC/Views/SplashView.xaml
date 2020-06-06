@@ -6,21 +6,7 @@
     xmlns:viewModelBase="clr-namespace:LBC.ViewModels.Base;assembly=LBC"
     viewModelBase:ViewModelLocator.AutoWireViewModel="true"
     BackgroundColor="Black">
-    <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill">
-        <Image
-            Aspect="AspectFit"
-            HorizontalOptions="Center"
-            Source="splash"
-            VerticalOptions="Start" />
-        <Label
-            Margin="0,50,0,0"
-            FontAttributes="Bold"
-            FontSize="Large"
-            HorizontalOptions="Center"
-            Text="Laughlin Boyz Club"
-            TextColor="White"
-            VerticalOptions="Center" />
-    </StackLayout>
+    <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill" />
 
     <ContentPage.Content />
 </ContentPage>

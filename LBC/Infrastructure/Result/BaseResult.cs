@@ -1,16 +1,18 @@
 ﻿using System;
 namespace LBC.Infrastructure.Result
 {
-    public abstract class BaseResult<TResult, TMessage> 
+    public abstract class BaseResult<T> 
     {
-        private readonly TResult Result;
-        private readonly TMessage Message;
-
-        public BaseResult(TResult result, TMessage message)
+        private T _status;
+        public T Status
         {
-            this.Result = result;
-            this.Message = message;
+            get => _status;
         }
 
+        public BaseResult(T status)
+        {
+            _status = status;
+        }
+      
     }
 }

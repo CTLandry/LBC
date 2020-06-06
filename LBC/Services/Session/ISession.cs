@@ -5,6 +5,6 @@ namespace LBC.Services.Session
 {
     public interface ISession
     {
-        Task<bool> SessionIsValid();
+        
     }
 }
