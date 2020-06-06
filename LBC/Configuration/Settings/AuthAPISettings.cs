@@ -15,5 +15,8 @@ namespace LBC.Configuration.Settings
         [JsonProperty("maxbuffersize")]
         public int maxbuffersize { get; set; }
 
+        [JsonProperty("socialAuthEndPoint")]
+        public int socialAuthEndPoint { get; set; }
+
     }
 }

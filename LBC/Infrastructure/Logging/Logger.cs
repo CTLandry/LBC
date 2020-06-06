@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections;
+using System.Diagnostics;
 using System.Threading.Tasks;
-using LBC.Services.Session;
+using LBC.Services.User.Session;
 
 namespace LBC.Infrastructure.Logging
 {
@@ -41,9 +42,16 @@ namespace LBC.Infrastructure.Logging
             throw new NotImplementedException();
         }
 
-        public Task LogToDebugger(string debugStatement)
+        public async Task LogToDebugger(string exceptionMessage)
         {
-            throw new NotImplementedException();
+            await Task.Run(() =>
+            {
+                Debug.WriteLine("----------Error----------");
+                Debug.WriteLine($"Time: {DateTime.Now}");
+                Debug.WriteLine($"Error: {exceptionMessage}");
+                Debug.WriteLine("-------------------------");
+            });
+           
         }
     }
 }

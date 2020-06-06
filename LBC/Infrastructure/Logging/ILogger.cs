@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Threading.Tasks;
-using LBC.Services.Session;
+using LBC.Services.User.Session;
 
 namespace LBC.Infrastructure.Logging
 {
@@ -15,7 +15,7 @@ namespace LBC.Infrastructure.Logging
         Task LogEvent<D>(string eventName, D data) where D : IEnumerable;
         Task LogEvent<D,S>(string eventName, D data, ISession session) where D : IEnumerable
                                                                        where S : ISession;
-        Task LogToDebugger(string debugStatement);
+        Task LogToDebugger(string exceptionMessage);
         
     }
 }

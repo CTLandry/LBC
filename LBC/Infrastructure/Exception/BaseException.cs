@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using LBC.Domain.SocialAuth.Exceptions;
 using LBC.Infrastructure.Logging;
-using LBC.Services.Session;
+using LBC.Services.User.Session;
 using TinyIoC;
 
 namespace LBC.Infrastructure.Exception

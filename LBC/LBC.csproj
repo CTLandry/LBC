@@ -13,7 +13,7 @@
     <DefineConstants>TRACE;RELEASE;NETSTANDARD;NETSTANDARD2_0;PROD</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.6.0.800" />  
+    <PackageReference Include="Xamarin.Forms" Version="4.6.0.847" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="TinyIoC" Version="1.3.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -37,6 +37,13 @@
     <Folder Include="Configuration\" />
     <Folder Include="Configuration\Settings\" />
     <Folder Include="Configuration\Configs\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Authentication\" />
+    <Folder Include="Services\User\" />
+    <Folder Include="Services\User\Session\" />
+    <Folder Include="Services\_Base\" />
+    <Folder Include="Services\Authentication\Common\" />
+    <Folder Include="Services\Authentication\SocialAuth\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Configuration\Configs\config-dev.json" />
