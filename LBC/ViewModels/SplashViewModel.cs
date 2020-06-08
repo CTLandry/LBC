@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using LBC.Services.Session;
+using LBC.Services.User.Session;
 using LBC.ViewModels.Base;
 
 namespace LBC.ViewModels

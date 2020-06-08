@@ -6,7 +6,24 @@
     xmlns:viewModelBase="clr-namespace:LBC.ViewModels.Base;assembly=LBC"
     viewModelBase:ViewModelLocator.AutoWireViewModel="true"
     BackgroundColor="Black">
-    <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill" />
+    <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill">
+        <Image
+            Aspect="AspectFit"
+            HeightRequest="400"
+            HorizontalOptions="Fill"
+            Source="splash.png"
+            VerticalOptions="StartAndExpand" />
+        <ImageButton
+            BackgroundColor="Transparent"
+            HorizontalOptions="Center"
+            Source="google_signin_button.png"
+            VerticalOptions="Center" />
+        <Button
+            HorizontalOptions="Center"
+            Text="Facebook Auth"
+            VerticalOptions="Center"
+            WidthRequest="200" />
+    </StackLayout>
 
     <ContentPage.Content />
 </ContentPage>

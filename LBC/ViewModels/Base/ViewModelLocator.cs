@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Reflection;
-using LBC.Services.Session;
+using LBC.Services.User.Session;
 using TinyIoC;
 using Xamarin.Forms;
 

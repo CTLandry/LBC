@@ -38,24 +38,22 @@ namespace LBC.Web.API
                 o.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
             })
                 .AddCookie()
-                .AddFacebook(fb =>
+                //.AddFacebook(fb =>
+                //{
+                //    fb.AppId = Configuration["FacebookAppId"];
+                //    fb.AppSecret = Configuration["FacebookAppSecret"];
+                //    fb.SaveTokens = true;
+                //})
+                .AddGoogle(options =>
                 {
-                    fb.AppId = Configuration["FacebookAppId"];
-                    fb.AppSecret = Configuration["FacebookAppSecret"];
-                    fb.SaveTokens = true;
-                })
-                .AddGoogle(g =>
-                {
-                    g.ClientId = Configuration["GoogleClientId"];
-                    g.ClientSecret = Configuration["GoogleClientSecret"];
-                    g.SaveTokens = true;
-                })
-                .AddMicrosoftAccount(ms =>
-                {
-                    ms.ClientId = Configuration["MicrosoftClientId"];
-                    ms.ClientSecret = Configuration["MicrosoftClientSecret"];
-                    ms.SaveTokens = true;
+                    IConfigurationSection googleAuthNSection =
+                    Configuration.GetSection("Authentication:Google");
+
+                    options.ClientId = googleAuthNSection["ClientId"];
+                    options.ClientSecret = googleAuthNSection["ClientSecret"];
+                    options.SaveTokens = true;
                 });
+               
               
         }
 
