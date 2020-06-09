@@ -137,6 +137,10 @@
     <ImageAsset Include="Assets.xcassets\splash.imageset\laughlinriver_nightshot-1.png" />
     <ImageAsset Include="Assets.xcassets\splash.imageset\laughlinriver_nightshot-2.png" />
     <ImageAsset Include="Assets.xcassets\splash.imageset\laughlinriver_nightshot-3.png" />
+    <ImageAsset Include="Assets.xcassets\google_signin_button.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\google_signin_button.imageset\btn_google_light_normal_ios.png" />
+    <ImageAsset Include="Assets.xcassets\google_signin_button.imageset\btn_google_light_normal_ios%402x.png" />
+    <ImageAsset Include="Assets.xcassets\google_signin_button.imageset\btn_google_light_normal_ios%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -161,5 +165,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets.xcassets\splash.imageset\" />
+    <Folder Include="Assets.xcassets\google_signin_button.imageset\" />
   </ItemGroup>
 </Project>

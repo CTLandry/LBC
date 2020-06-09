@@ -4,26 +4,59 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:viewModelBase="clr-namespace:LBC.ViewModels.Base;assembly=LBC"
-    viewModelBase:ViewModelLocator.AutoWireViewModel="true"
-    BackgroundColor="Black">
-    <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill">
+    viewModelBase:ViewModelLocator.AutoWireViewModel="true">
+    <Grid BackgroundColor="#000000">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="250" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
         <Image
-            Aspect="AspectFit"
+            Grid.Row="0"
+            Grid.RowSpan="6"
+            Grid.ColumnSpan="3"
+            Margin="0,-44,0,0"
+            Aspect="AspectFill"
             HeightRequest="400"
-            HorizontalOptions="Fill"
-            Source="splash.png"
-            VerticalOptions="StartAndExpand" />
-        <ImageButton
-            BackgroundColor="Transparent"
+            Opacity=".75"
+            Source="splash" />
+
+        <Label
+            Grid.Row="0"
+            Grid.ColumnSpan="3"
+            Margin="0,50,0,0"
+            FontSize="Title"
             HorizontalOptions="Center"
-            Source="google_signin_button.png"
-            VerticalOptions="Center" />
-        <Button
+            Text="Laughlin Boyz Club"
+            TextColor="White" />
+
+        <Label
+            Grid.Row="3"
+            Grid.ColumnSpan="3"
+            Margin="0,-22,0,0"
+            FontSize="Subtitle"
             HorizontalOptions="Center"
-            Text="Facebook Auth"
-            VerticalOptions="Center"
-            WidthRequest="200" />
-    </StackLayout>
+            Text="Authenticate"
+            TextColor="White" />
+
+        <BoxView
+            Grid.Row="3"
+            Grid.ColumnSpan="3"
+            Margin="20,19,20,19"
+            BackgroundColor="White" />
+
+        <Image
+            Grid.Row="5"
+            Grid.ColumnSpan="3"
+            HorizontalOptions="CenterAndExpand"
+            Source="google_signin_button"
+            VerticalOptions="CenterAndExpand" />
+
+    </Grid>
 
     <ContentPage.Content />
 </ContentPage>
