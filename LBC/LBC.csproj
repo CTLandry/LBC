@@ -44,13 +44,15 @@
     <Folder Include="Services\_Base\" />
     <Folder Include="Services\Authentication\Common\" />
     <Folder Include="Services\Authentication\SocialAuth\" />
+    <Folder Include="Fonts\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Configuration\Configs\config-dev.json" />
     <None Remove="Configuration\Configs\config-prod.json" />
+    <None Remove="Fonts\Pacifico.ttf" />
   </ItemGroup>
+ 
   <ItemGroup>
-    <EmbeddedResource Include="Configuration\Configs\config-dev.json" />
-    <EmbeddedResource Include="Configuration\Configs\config-prod.json" />
+    <EmbeddedResource Include="Fonts\Pacifico.ttf" />
   </ItemGroup>
 </Project>

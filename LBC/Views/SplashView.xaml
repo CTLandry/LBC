@@ -7,17 +7,18 @@
     viewModelBase:ViewModelLocator.AutoWireViewModel="true">
     <Grid BackgroundColor="#000000">
         <Grid.RowDefinitions>
-            <RowDefinition Height="100" />
-            <RowDefinition Height="250" />
+            <RowDefinition Height="120" />
+            <RowDefinition Height="230" />
             <RowDefinition Height="100" />
             <RowDefinition Height="40" />
             <RowDefinition Height="40" />
+            <RowDefinition Height="60" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <Image
             Grid.Row="0"
-            Grid.RowSpan="6"
+            Grid.RowSpan="7"
             Grid.ColumnSpan="3"
             Margin="0,-44,0,0"
             Aspect="AspectFill"
@@ -27,9 +28,11 @@
 
         <Label
             Grid.Row="0"
+            Grid.RowSpan="2"
             Grid.ColumnSpan="3"
             Margin="0,50,0,0"
-            FontSize="Title"
+            FontFamily="Pacifico"
+            FontSize="36"
             HorizontalOptions="Center"
             Text="Laughlin Boyz Club"
             TextColor="White" />
@@ -38,7 +41,8 @@
             Grid.Row="3"
             Grid.ColumnSpan="3"
             Margin="0,-22,0,0"
-            FontSize="Subtitle"
+            FontFamily="Pacifico"
+            FontSize="24"
             HorizontalOptions="Center"
             Text="Authenticate"
             TextColor="White" />
@@ -49,12 +53,32 @@
             Margin="20,19,20,19"
             BackgroundColor="White" />
 
-        <Image
+        <Frame
             Grid.Row="5"
             Grid.ColumnSpan="3"
-            HorizontalOptions="CenterAndExpand"
-            Source="google_signin_button"
-            VerticalOptions="CenterAndExpand" />
+            Margin="20,0,20,0"
+            Padding="10,0,20,0"
+            BackgroundColor="Transparent"
+            BorderColor="White"
+            CornerRadius="3"
+            HasShadow="false"
+            HorizontalOptions="CenterAndExpand">
+            <StackLayout Padding="5" Orientation="Horizontal">
+                <Image Aspect="AspectFill" Source="google_signin_button" />
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    Text="Google"
+                    TextColor="White"
+                    VerticalOptions="CenterAndExpand" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                        x:Name="googleButton"
+                        AutomationId="googleButton"
+                        Command="{Binding GoogleAuthenticationCommand}" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+        </Frame>
 
     </Grid>
 
