@@ -75,7 +75,9 @@
                     <TapGestureRecognizer
                         x:Name="googleButton"
                         AutomationId="googleButton"
-                        Command="{Binding GoogleAuthenticationCommand}" />
+                        Command="{Binding GoogleAuthenticationCommand}"
+                        CommandParameter="Google" />
+
                 </StackLayout.GestureRecognizers>
             </StackLayout>
         </Frame>

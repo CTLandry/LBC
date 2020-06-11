@@ -9,5 +9,26 @@ namespace LBC.Services.Authentication.Common
         {
             AuthType = type; 
         }
+
+        public AuthParameters(string type)
+        {
+            switch(type)
+            {
+                case "Google":
+                    {
+                        AuthType = AuthType.Google;
+                        break;
+                    }
+                case "Facebook":
+                    {
+                        AuthType = AuthType.Facebook;
+                        break;
+                    }
+                default:
+                    {
+                        throw new SystemException("Auth type unknown");
+                    }
+            }
+        }
     }
 }
