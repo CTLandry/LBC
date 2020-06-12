@@ -11,16 +11,18 @@ namespace LBC
         public App()
         {
             InitializeComponent();
+            InitApp();
             MainPage = new SplashView();
         }
 
         private void InitApp()
         {
-
+            ViewModels.Base.ViewModelLocator.RegisterViewModels();
         }
 
         protected override void OnStart()
         {
+
         }
 
         protected override void OnSleep()

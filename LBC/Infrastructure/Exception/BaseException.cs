@@ -1,7 +1,7 @@
 ﻿using System;
 using LBC.Infrastructure.Logging;
 using LBC.Services.User.Session;
-using TinyIoC;
+
 
 namespace LBC.Infrastructure.Exception
 {
@@ -14,8 +14,8 @@ namespace LBC.Infrastructure.Exception
 
         public BaseException(T exception)
         {
-            this.Logger = Logger == null ? TinyIoCContainer.Current.Resolve<ILogger>() : this.Logger;
-            this.Session = Session == null ? TinyIoCContainer.Current.Resolve<ISession>() : this.Session;
+            //this.Logger = Logger == null ? TinyIoCContainer.Current.Resolve<ILogger>() : this.Logger;
+            //this.Session = Session == null ? TinyIoCContainer.Current.Resolve<ISession>() : this.Session;
             Exception = exception;
 
             //TODO log data about the exception

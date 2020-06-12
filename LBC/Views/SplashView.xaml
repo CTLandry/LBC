@@ -2,9 +2,7 @@
 <ContentPage
     x:Class="LBC.Views.SplashView"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:viewModelBase="clr-namespace:LBC.ViewModels.Base;assembly=LBC"
-    viewModelBase:ViewModelLocator.AutoWireViewModel="true">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Grid BackgroundColor="#000000">
         <Grid.RowDefinitions>
             <RowDefinition Height="120" />
