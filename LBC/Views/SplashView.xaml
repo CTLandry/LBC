@@ -2,7 +2,9 @@
 <ContentPage
     x:Class="LBC.Views.SplashView"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    prism:ViewModelLocator.AutowireViewModel="True">
     <Grid BackgroundColor="#000000">
         <Grid.RowDefinitions>
             <RowDefinition Height="120" />
@@ -73,9 +75,8 @@
                     <TapGestureRecognizer
                         x:Name="googleButton"
                         AutomationId="googleButton"
-                        Command="{Binding AuthenticateUserCommand}"
+                        Command="{Binding AuthenticateCommand}"
                         CommandParameter="Google" />
-
                 </StackLayout.GestureRecognizers>
             </StackLayout>
         </Frame>

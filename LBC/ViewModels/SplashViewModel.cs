@@ -4,6 +4,7 @@ using System.Windows.Input;
 using LBC.Services.Authentication.Common;
 using LBC.Services.User.Session;
 using LBC.ViewModels.Base;
+using Prism.Commands;
 using Xamarin.Forms;
 
 namespace LBC.ViewModels
@@ -13,21 +14,14 @@ namespace LBC.ViewModels
         private ISession _session;
         private IAuthenticate _authentication;
 
-        private ICommand _authenticateUser;
-        public ICommand AuthenticateUserCommand
-        {
-            get
-            {
-                return _authenticateUser ?? (_authenticateUser =
-                new Command(async (type) => await Authenticate((string)type)));
-            }
-        }
+        public DelegateCommand<string> AuthenticateCommand { get; private set; }
 
         public SplashViewModel(ISession session,
                                IAuthenticate authentication)
         {
             _session = session;
             _authentication = authentication;
+            AuthenticateCommand =  new DelegateCommand<string>(async (type) => await Authenticate(type));
             Task.Run(async () => await Init());
         }
 
@@ -39,9 +33,9 @@ namespace LBC.ViewModels
             }
         }
 
-        private async Task Authenticate(string type)
+        async Task Authenticate(string type)
         {
-            var authResult = await _authentication.Authenticate(new AuthParameters((string)type));
+            var authResult = await _authentication.Authenticate(new AuthParameters(type));
             if(authResult.authStatus == AuthStatus.Success)
             {
                 //update the session
