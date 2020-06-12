@@ -29,7 +29,6 @@
     <Folder Include="Models\Base\" />
     <Folder Include="ViewModels\Base\" />
     <Folder Include="Data\" />
-    <Folder Include="TinyIoC\" />
     <Folder Include="Views\" />
     <Folder Include="Infrastructure\" />
     <Folder Include="Infrastructure\Exception\" />
