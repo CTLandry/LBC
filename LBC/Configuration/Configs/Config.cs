@@ -7,9 +7,9 @@ namespace LBC.Configuration.Configs
     public class Config : IConfiguration
     {
         [JsonProperty("authapisettings")]
-        public AuthAPISettings AuthApiSettings { get; }
+        public AuthAPISettings AuthApiSettings { get; set; }
         [JsonProperty("appcentersettings")]
-        public AppCenterSettings AppCenterSettings { get; }
+        public AppCenterSettings AppCenterSettings { get; set; }
 
     }
 }

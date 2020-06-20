@@ -10,6 +10,7 @@ using Prism;
 using Prism.Ioc;
 using Prism.Navigation;
 using Prism.Unity;
+using Unity;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -25,10 +26,10 @@ namespace LBC
         protected override async void OnInitialized()
         {
             InitializeComponent();
-
-            //var result = await NavigationService.("NavigationPage/SplashView");
             App.Current.MainPage = new SplashView();
         }
+
+        
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
@@ -37,7 +38,8 @@ namespace LBC
             containerRegistry.RegisterForNavigation<SplashView, SplashViewModel>();
 
             //Services
-            containerRegistry.RegisterSingleton<IConfiguration, Config>();
+            var config = ConfigLoader.LoadConfiguration();
+            containerRegistry.RegisterInstance<IConfiguration>(config);
             containerRegistry.RegisterSingleton<ILogger, Logger>();
             containerRegistry.RegisterSingleton<ISession, Session>();
             containerRegistry.RegisterSingleton<IAuthenticate, SocialAuthenticationService>();

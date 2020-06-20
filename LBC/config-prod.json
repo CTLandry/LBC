@@ -1,0 +1,12 @@
+﻿{
+  "appaenteraettings": {
+    "isenabled": true,
+    "androidid": "",
+    "iosid": ""
+  },
+  "authapisettings": {
+    "timeout": 20,
+    "maxbuffersize": 256000,
+    "socialauthendpoint": ""
+  }
+}

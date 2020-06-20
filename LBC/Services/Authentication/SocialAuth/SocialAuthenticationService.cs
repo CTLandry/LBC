@@ -24,7 +24,7 @@ namespace LBC.Services.Authentication.SocialAuth
                 WebAuthenticatorResult r = null;
 
                 var authUrl = new Uri(config.AuthApiSettings.socialAuthEndPoint + authParameters.AuthType.ToString());
-                var callbackUrl = new Uri("lbcauth://");
+                var callbackUrl = new Uri("xamarinessentials://");
 
                 r = await WebAuthenticator.AuthenticateAsync(authUrl, callbackUrl);
 

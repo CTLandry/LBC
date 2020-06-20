@@ -5,8 +5,8 @@ namespace LBC.Configuration.Configs
 {
     public interface IConfiguration
     {
-        AppCenterSettings AppCenterSettings { get; }
-        AuthAPISettings AuthApiSettings { get; }
+        AppCenterSettings AppCenterSettings { get; set; }
+        AuthAPISettings AuthApiSettings { get; set; }
     }
 }
 
