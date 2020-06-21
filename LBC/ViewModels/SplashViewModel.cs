@@ -38,7 +38,7 @@ namespace LBC.ViewModels
             var authResult = await _authentication.Authenticate(new AuthParameters(type));
             if(authResult.authStatus == AuthStatus.Success)
             {
-                //update the session
+                _session.AccessToken = 
                 //create the appshell page and drop them at a main page
             }
             else if(authResult.authStatus == AuthStatus.Failed)

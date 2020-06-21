@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Threading;
 using LBC.Configuration.Configs;
 using LBC.Infrastructure.Logging;
 using LBC.Services.Authentication.Common;
@@ -6,13 +6,15 @@ using LBC.Services.Authentication.SocialAuth;
 using LBC.Services.User.Session;
 using LBC.ViewModels;
 using LBC.Views;
+using MonkeyCache;
+using MonkeyCache.FileStore;
 using Prism;
 using Prism.Ioc;
 using Prism.Navigation;
 using Prism.Unity;
 using Unity;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+
 
 namespace LBC
 {
@@ -40,6 +42,10 @@ namespace LBC
             //Services
             var config = ConfigLoader.LoadConfiguration();
             containerRegistry.RegisterInstance<IConfiguration>(config);
+
+            Barrel.ApplicationId = config.CacheSettings.barrelid;
+            containerRegistry.RegisterInstance<IBarrel>(Barrel.Current);
+
             containerRegistry.RegisterSingleton<ILogger, Logger>();
             containerRegistry.RegisterSingleton<ISession, Session>();
             containerRegistry.RegisterSingleton<IAuthenticate, SocialAuthenticationService>();

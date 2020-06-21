@@ -21,14 +21,13 @@ namespace LBC.Services.Authentication.SocialAuth
         {
             try
             {
-                WebAuthenticatorResult r = null;
+                WebAuthenticatorResult authApiResultData = null;
 
                 var authUrl = new Uri(config.AuthApiSettings.socialAuthEndPoint + authParameters.AuthType.ToString());
                 var callbackUrl = new Uri("xamarinessentials://");
 
-                r = await WebAuthenticator.AuthenticateAsync(authUrl, callbackUrl);
-
-                return new AuthResult(AuthStatus.Success);
+                authApiResultData = await WebAuthenticator.AuthenticateAsync(authUrl, callbackUrl);
+                return new SocialAuthResult(AuthStatus.Success, "", authApiResultData);
             }
             catch (Exception ex)
             {

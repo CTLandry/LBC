@@ -7,6 +7,7 @@ namespace LBC.Configuration.Configs
     {
         AppCenterSettings AppCenterSettings { get; set; }
         AuthAPISettings AuthApiSettings { get; set; }
+        CacheSettings CacheSettings { get; set; }
     }
 }
 

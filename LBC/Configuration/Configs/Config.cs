@@ -10,6 +10,7 @@ namespace LBC.Configuration.Configs
         public AuthAPISettings AuthApiSettings { get; set; }
         [JsonProperty("appcentersettings")]
         public AppCenterSettings AppCenterSettings { get; set; }
-
+        [JsonProperty("cachesettings")]
+        public CacheSettings CacheSettings { get; set; }
     }
 }
