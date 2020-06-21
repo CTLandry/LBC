@@ -1,0 +1,12 @@
+﻿{
+  "authapisettings": {
+    "baseurl": "",
+    "timeout": 20,
+    "maxbuffersize": 2560000
+  },
+  "appcentersettings": {
+    "isenabled": true,
+    "androidid": "",
+    "iosid": ""
+  }
+}

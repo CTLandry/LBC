@@ -1,0 +1,12 @@
+﻿{
+  "authapisettings": {
+    "baseurl": "https://localhost:5003/mobileauth/",
+    "timeout": 20,
+    "maxbuffersize": 2560000
+  },
+  "appcentersettings": {
+    "isenabled": true,
+    "androidid": "",
+    "iosid": ""
+  }
+}

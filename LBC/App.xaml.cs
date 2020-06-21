@@ -1,28 +1,55 @@
-﻿using System;
+﻿using System.Threading;
+using LBC.Configuration.Configs;
+using LBC.Infrastructure.Logging;
+using LBC.Services.Authentication.Common;
+using LBC.Services.Authentication.SocialAuth;
+using LBC.Services.User.Session;
+using LBC.ViewModels;
+using LBC.Views;
+using MonkeyCache;
+using MonkeyCache.FileStore;
+using Prism;
+using Prism.Ioc;
+using Prism.Navigation;
+using Prism.Unity;
+using Unity;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+
 
 namespace LBC
 {
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
 
-        public App()
+        public App() : this(null) { }
+
+        public App(IPlatformInitializer initializer) : base(initializer) { }
+
+        protected override async void OnInitialized()
         {
             InitializeComponent();
-            MainPage = new AppShell();
+            App.Current.MainPage = new SplashView();
         }
 
-        protected override void OnStart()
-        {
-        }
+        
 
-        protected override void OnSleep()
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-        }
+            //Navigation Views
+            containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<SplashView, SplashViewModel>();
 
-        protected override void OnResume()
-        {
+            //Services
+            var config = ConfigLoader.LoadConfiguration();
+            containerRegistry.RegisterInstance<IConfiguration>(config);
+
+            Barrel.ApplicationId = config.CacheSettings.barrelid;
+            containerRegistry.RegisterInstance<IBarrel>(Barrel.Current);
+
+            containerRegistry.RegisterSingleton<ILogger, Logger>();
+            containerRegistry.RegisterSingleton<ISession, Session>();
+            containerRegistry.RegisterSingleton<ISocialAuth, SocialAuthenticationService>();
+
         }
     }
 }

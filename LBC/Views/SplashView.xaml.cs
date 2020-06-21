@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using LBC.ViewModels;
 using Xamarin.Forms;
 
 namespace LBC.Views
@@ -10,6 +10,7 @@ namespace LBC.Views
         public SplashView()
         {
             InitializeComponent();
+           
         }
     }
 }

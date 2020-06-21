@@ -1,5 +1,87 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LBC.Views.SplashView">
-    <ContentPage.Content>
-    </ContentPage.Content>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="LBC.Views.SplashView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    prism:ViewModelLocator.AutowireViewModel="True">
+    <Grid BackgroundColor="#000000">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120" />
+            <RowDefinition Height="230" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Image
+            Grid.Row="0"
+            Grid.RowSpan="7"
+            Grid.ColumnSpan="3"
+            Margin="0,-44,0,0"
+            Aspect="AspectFill"
+            HeightRequest="400"
+            Opacity=".75"
+            Source="splash" />
+
+        <Label
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="3"
+            Margin="0,50,0,0"
+            FontFamily="Pacifico"
+            FontSize="36"
+            HorizontalOptions="Center"
+            Text="Laughlin Boyz Club"
+            TextColor="White" />
+
+        <Label
+            Grid.Row="3"
+            Grid.ColumnSpan="3"
+            Margin="0,-22,0,0"
+            FontFamily="Pacifico"
+            FontSize="24"
+            HorizontalOptions="Center"
+            Text="Authenticate"
+            TextColor="White" />
+
+        <BoxView
+            Grid.Row="3"
+            Grid.ColumnSpan="3"
+            Margin="20,19,20,19"
+            BackgroundColor="White" />
+
+        <Frame
+            Grid.Row="5"
+            Grid.ColumnSpan="3"
+            Margin="20,0,20,0"
+            Padding="10,0,20,0"
+            BackgroundColor="Transparent"
+            BorderColor="White"
+            CornerRadius="3"
+            HasShadow="false"
+            HorizontalOptions="CenterAndExpand">
+            <StackLayout Padding="5" Orientation="Horizontal">
+                <Image Aspect="AspectFill" Source="google_signin_button" />
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    Text="Google"
+                    TextColor="White"
+                    VerticalOptions="CenterAndExpand" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                        x:Name="googleButton"
+                        AutomationId="googleButton"
+                        Command="{Binding AuthenticateCommand}"
+                        CommandParameter="Google" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+        </Frame>
+
+    </Grid>
+
+    <ContentPage.Content />
 </ContentPage>
