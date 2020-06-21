@@ -48,6 +48,7 @@
     <Folder Include="Services\Authentication\SocialAuth\" />
     <Folder Include="Fonts\" />
     <Folder Include="Models\User\" />
+    <Folder Include="Services\Caching\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Configuration\Configs\config-dev.json" />
