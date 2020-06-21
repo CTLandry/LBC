@@ -48,7 +48,7 @@ namespace LBC
 
             containerRegistry.RegisterSingleton<ILogger, Logger>();
             containerRegistry.RegisterSingleton<ISession, Session>();
-            containerRegistry.RegisterSingleton<IAuthenticate, SocialAuthenticationService>();
+            containerRegistry.RegisterSingleton<ISocialAuth, SocialAuthenticationService>();
 
         }
     }

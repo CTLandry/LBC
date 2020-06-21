@@ -6,7 +6,7 @@ namespace LBC.Services.Authentication.SocialAuth
 {
     public interface ISocialAuth
     {
-        public abstract Task<T> Authenticate<T>(AuthParameters authParameters);
-        public abstract Task<T> RefreshAuthentication<T>(AuthParameters authParameters);
+        Task<IAuthenticatonResult> Authenticate(AuthParameters authParameters);
+        Task<IAuthenticatonResult> RefreshAuthentication(AuthParameters authParameters);
     }
 }

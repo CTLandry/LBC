@@ -17,7 +17,7 @@ namespace LBC.Services.Authentication.SocialAuth
         {
         }
 
-        public async override Task<T> Authenticate<T>(AuthParameters authParameters)
+        public override async Task<IAuthenticatonResult> Authenticate(AuthParameters authParameters)
         {
             try
             {
@@ -27,7 +27,10 @@ namespace LBC.Services.Authentication.SocialAuth
                 var callbackUrl = new Uri("xamarinessentials://");
 
                 authApiResultData = await WebAuthenticator.AuthenticateAsync(authUrl, callbackUrl);
-                return new SocialAuthResult(AuthStatus.Success, "", authApiResultData);
+                var user = new Models.User.User_Model();
+                user.Name = authApiResultData.Properties["name"] ?? "Unknown";
+
+                return new AuthResult(AuthStatus.Success, "", authApiResultData.AccessToken, authApiResultData.RefreshToken, authApiResultData.ExpiresIn, user);
             }
             catch (Exception ex)
             {
@@ -36,9 +39,11 @@ namespace LBC.Services.Authentication.SocialAuth
             }
         }
 
-        public override Task<T> RefreshAuthentication<T>(AuthParameters authParameters)
+        public override async Task<IAuthenticatonResult> RefreshAuthentication(AuthParameters authParameters)
         {
             throw new NotImplementedException();
         }
+
+       
     }
 }

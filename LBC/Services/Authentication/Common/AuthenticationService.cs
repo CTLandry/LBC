@@ -13,8 +13,8 @@ namespace LBC.Services.Authentication.Common
         {
         }
 
-        public abstract Task<T> Authenticate<T>(AuthParameters authParameters);
-        public abstract Task<T> RefreshAuthentication<T>(AuthParameters authParameters);
+        public abstract Task<IAuthenticatonResult> Authenticate(AuthParameters authParameters);
+        public abstract Task<IAuthenticatonResult> RefreshAuthentication(AuthParameters authParameters);
        
     }
 }

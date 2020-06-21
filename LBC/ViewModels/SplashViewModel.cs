@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows.Input;
 using LBC.Services.Authentication.Common;
+using LBC.Services.Authentication.SocialAuth;
 using LBC.Services.User.Session;
 using LBC.ViewModels.Base;
 using Prism.Commands;
@@ -12,12 +13,12 @@ namespace LBC.ViewModels
     public class SplashViewModel : BaseViewModel
     {
         private ISession _session;
-        private IAuthenticate _authentication;
+        private ISocialAuth _authentication;
 
         public DelegateCommand<string> AuthenticateCommand { get; private set; }
 
         public SplashViewModel(ISession session,
-                               IAuthenticate authentication)
+                               ISocialAuth authentication)
         {
             _session = session;
             _authentication = authentication;
@@ -27,6 +28,8 @@ namespace LBC.ViewModels
 
         private async Task Init()
         {
+            //check for non expired session if so use it else drop here for auth
+
             if(await _session.SessionIsValid())
             {
                 App.Current.MainPage = new AppShell();
@@ -36,16 +39,21 @@ namespace LBC.ViewModels
         async Task Authenticate(string type)
         {
             var authResult = await _authentication.Authenticate(new AuthParameters(type));
-            if(authResult.authStatus == AuthStatus.Success)
+            if(authResult.Status == AuthStatus.Success)
             {
-                _session.AccessToken = 
-                //create the appshell page and drop them at a main page
+                _session.AccessToken = authResult.AccessToken;
+                _session.RefreshToken = authResult.RefreshToken;
+                _session.User = authResult.User;
+
+                //cache the session
+
+                App.Current.MainPage = new AppShell();
             }
-            else if(authResult.authStatus == AuthStatus.Failed)
+            else if(authResult.Status == AuthStatus.Failed)
             {
                 //need to add some popup or way to convey failed
             }
-            else if(authResult.authStatus == AuthStatus.Error)
+            else if(authResult.Status == AuthStatus.Error)
             {
                 //should still convey error the catch all blue whale page
                 //wont be available until the shell is created
