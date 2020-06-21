@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using LBC.Services.Authentication.Common;
 using LBC.Services.Authentication.SocialAuth;
+using LBC.Services.Caching;
 using LBC.Services.User.Session;
 using LBC.ViewModels.Base;
 using Prism.Commands;
@@ -14,26 +15,29 @@ namespace LBC.ViewModels
     {
         private ISession _session;
         private ISocialAuth _authentication;
+        private ICache _caching;
 
         public DelegateCommand<string> AuthenticateCommand { get; private set; }
 
         public SplashViewModel(ISession session,
-                               ISocialAuth authentication)
+                               ISocialAuth authentication,
+                               ICache cache)
         {
             _session = session;
             _authentication = authentication;
+            _caching = cache;
             AuthenticateCommand =  new DelegateCommand<string>(async (type) => await Authenticate(type));
             Task.Run(async () => await Init());
         }
 
         private async Task Init()
         {
-            //check for non expired session if so use it else drop here for auth
-
+            await _session.LoadSession(_caching);
             if(await _session.SessionIsValid())
             {
                 App.Current.MainPage = new AppShell();
             }
+
         }
 
         async Task Authenticate(string type)
@@ -43,9 +47,16 @@ namespace LBC.ViewModels
             {
                 _session.AccessToken = authResult.AccessToken;
                 _session.RefreshToken = authResult.RefreshToken;
+                _session.TokenExpires = new DateTimeOffset(DateTime.Now.AddDays(365));
                 _session.User = authResult.User;
 
-                //cache the session
+                var session = new Session();
+                session.AccessToken = _session.AccessToken;
+                session.RefreshToken = _session.RefreshToken;
+                session.TokenExpires = _session.TokenExpires;
+                session.User = _session.User;
+
+                await _caching.CacheData<Session>(CacheDataKey.Session, session, 365);
 
                 App.Current.MainPage = new AppShell();
             }

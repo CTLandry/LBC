@@ -23,7 +23,7 @@ namespace LBC.Services.Caching
         /// <param name="key">key for token</param>
         /// <param name="days">expiration duration</param>
         /// <returns></returns>
-        public async Task<T> CacheToken<T>(string key, T data, int days)
+        public async Task<T> CacheData<T>(CacheDataKey key, T data, int days)
         {
             try
             {
@@ -31,12 +31,12 @@ namespace LBC.Services.Caching
                 {
                     var json = data == null ? String.Empty : JsonConvert.SerializeObject(data);
 
-                    if (Barrel.Current.IsExpired(key))
+                    if (Barrel.Current.IsExpired(key.ToString()))
                     {
                         Barrel.Current.EmptyExpired();
                     }
 
-                    Barrel.Current.Add(key, json, TimeSpan.FromDays(days));
+                    Barrel.Current.Add(key.ToString(), json, TimeSpan.FromDays(days));
 
                     if (string.IsNullOrWhiteSpace(json))
                     {
@@ -66,7 +66,7 @@ namespace LBC.Services.Caching
         /// <typeparam name="T"></typeparam>
         /// <param name="key">Token's key</param>
         /// <returns></returns>
-        public async Task<T> GetToken<T>(string key)
+        public async Task<T> GetData<T>(CacheDataKey key)
         {
             try
             {
@@ -75,9 +75,9 @@ namespace LBC.Services.Caching
                     var json = String.Empty;
 
                     //check cache if it is not expired and a refresh is not forced
-                    if (!Barrel.Current.IsExpired(key))
+                    if (!Barrel.Current.IsExpired(key.ToString()))
                     {
-                        json = Barrel.Current.Get<string>(key);
+                        json = Barrel.Current.Get<string>(key.ToString());
                     }
 
                     if (string.IsNullOrWhiteSpace(json))
@@ -177,11 +177,11 @@ namespace LBC.Services.Caching
         /// </summary>
         /// <param name="key">The key the cache was stored with usually the url the data was pulled from</param>
         /// <returns></returns>
-        public async Task EmptyCache(string key)
+        public async Task EmptyCache(CacheDataKey key)
         {
             try
             {
-                await Task.Run(() => Barrel.Current.Empty(key));
+                await Task.Run(() => Barrel.Current.Empty(key.ToString()));
             }
             catch (SystemException ex)
             {

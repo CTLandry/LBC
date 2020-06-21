@@ -8,10 +8,10 @@ namespace LBC.Services.Caching
     {
 
         Task<T> CacheUrlData<T>(HttpClient client, string url, int days, bool forceRefresh);
-        Task<T> CacheToken<T>(string key, T data, int days);
-        Task<T> GetToken<T>(string key);
+        Task<T> CacheData<T>(CacheDataKey key, T data, int days);
+        Task<T> GetData<T>(CacheDataKey key);
         Task EmptyCache();
-        Task EmptyCache(string key);
+        Task EmptyCache(CacheDataKey key);
         Task EmptyExpired();
 
     }
