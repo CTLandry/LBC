@@ -8,7 +8,7 @@ using Xamarin.Essentials;
 
 namespace LBC.Services.Authentication.SocialAuth
 {
-    public class SocialAuthenticationService : AuthenticationService
+    public class SocialAuthenticationService : AuthenticationService, ISocialAuth
     {
         
 
@@ -17,7 +17,7 @@ namespace LBC.Services.Authentication.SocialAuth
         {
         }
 
-        public async override Task<AuthResult> Authenticate(AuthParameters authParameters)
+        public async override Task<T> Authenticate<T>(AuthParameters authParameters)
         {
             try
             {
@@ -36,11 +36,9 @@ namespace LBC.Services.Authentication.SocialAuth
             }
         }
 
-        public async override Task<AuthResult> RefreshAuthentication(AuthParameters authParameters)
+        public override Task<T> RefreshAuthentication<T>(AuthParameters authParameters)
         {
-            return await Authenticate(authParameters);
+            throw new NotImplementedException();
         }
-
-       
     }
 }

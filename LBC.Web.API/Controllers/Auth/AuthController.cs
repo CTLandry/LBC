@@ -35,7 +35,6 @@ namespace LBC.Web.API.Controllers.Auth
                 // Get parameters to send back to the callback
                 var qs = new Dictionary<string, string>
             {
-                { "name", auth.Principal.Identity.Name ?? string.Empty },
                 { "access_token", auth.Properties.GetTokenValue("access_token") },
                 { "refresh_token", auth.Properties.GetTokenValue("refresh_token") ?? string.Empty },
                 { "expires", (auth.Properties.ExpiresUtc?.ToUnixTimeSeconds() ?? -1).ToString() }
