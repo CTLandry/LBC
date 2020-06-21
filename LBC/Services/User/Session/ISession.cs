@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using LBC.Models.User;
+using LBC.Services.Caching;
 
 namespace LBC.Services.User.Session
 {
@@ -11,5 +12,7 @@ namespace LBC.Services.User.Session
         string AccessToken { get; set; }
         string RefreshToken { get; set; }
         User_Model User { get; set; }
+        Task LoadSession(ICache cache);
+        Task ClearSession(ICache cache);
     }
 }

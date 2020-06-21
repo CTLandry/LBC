@@ -3,6 +3,7 @@ using LBC.Configuration.Configs;
 using LBC.Infrastructure.Logging;
 using LBC.Services.Authentication.Common;
 using LBC.Services.Authentication.SocialAuth;
+using LBC.Services.Caching;
 using LBC.Services.User.Session;
 using LBC.ViewModels;
 using LBC.Views;
@@ -42,11 +43,8 @@ namespace LBC
             //Services
             var config = ConfigLoader.LoadConfiguration();
             containerRegistry.RegisterInstance<IConfiguration>(config);
-
-            Barrel.ApplicationId = config.CacheSettings.barrelid;
-            containerRegistry.RegisterInstance<IBarrel>(Barrel.Current);
-
             containerRegistry.RegisterSingleton<ILogger, Logger>();
+            containerRegistry.RegisterSingleton<ICache, CachingService>();
             containerRegistry.RegisterSingleton<ISession, Session>();
             containerRegistry.RegisterSingleton<ISocialAuth, SocialAuthenticationService>();
 
