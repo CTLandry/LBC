@@ -40,13 +40,9 @@ Global
 		{2604A637-2994-4ED1-AE88-B887215D2B0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2604A637-2994-4ED1-AE88-B887215D2B0B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2604A637-2994-4ED1-AE88-B887215D2B0B}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{2604A637-2994-4ED1-AE88-B887215D2B0B}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{2604A637-2994-4ED1-AE88-B887215D2B0B}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{2604A637-2994-4ED1-AE88-B887215D2B0B}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{2604A637-2994-4ED1-AE88-B887215D2B0B}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{2604A637-2994-4ED1-AE88-B887215D2B0B}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{2604A637-2994-4ED1-AE88-B887215D2B0B}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{2604A637-2994-4ED1-AE88-B887215D2B0B}.Release|iPhone.Build.0 = Release|Any CPU
 		{65835C81-C0B3-40AE-896E-AB47EA7DA38A}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
 		{65835C81-C0B3-40AE-896E-AB47EA7DA38A}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
 		{65835C81-C0B3-40AE-896E-AB47EA7DA38A}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
@@ -64,13 +60,9 @@ Global
 		{D004CD11-CC63-4AD5-8B16-0AC03ADF29C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D004CD11-CC63-4AD5-8B16-0AC03ADF29C0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D004CD11-CC63-4AD5-8B16-0AC03ADF29C0}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{D004CD11-CC63-4AD5-8B16-0AC03ADF29C0}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{D004CD11-CC63-4AD5-8B16-0AC03ADF29C0}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{D004CD11-CC63-4AD5-8B16-0AC03ADF29C0}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{D004CD11-CC63-4AD5-8B16-0AC03ADF29C0}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{D004CD11-CC63-4AD5-8B16-0AC03ADF29C0}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{D004CD11-CC63-4AD5-8B16-0AC03ADF29C0}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{D004CD11-CC63-4AD5-8B16-0AC03ADF29C0}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{EC9738C5-FC14-48EE-8AC0-1C84B2B8358B} = {8F66984A-CF00-4F12-85AD-D0CAE53B8882}
