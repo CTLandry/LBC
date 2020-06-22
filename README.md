@@ -8,11 +8,11 @@ This application is a person project for managing an annual trip that I take wit
 
 **Android**
 
-[![Build Status](https://dev.azure.com/clintlandry/LBC/_apis/build/status/CTLandry.LBC.Android?branchName=master)](https://dev.azure.com/clintlandry/LBC/_build/latest?definitionId=1&branchName=master)
+<img src="https://dev.azure.com/clintlandry/LBC/_apis/build/status/CTLandry.LBC.Android?branchName=master" />
 
 **iOS** 
 
-[![Build Status](https://dev.azure.com/clintlandry/LBC/_apis/build/status/CTLandry.LBC.iOS?branchName=master)](https://dev.azure.com/clintlandry/LBC/_build/latest?definitionId=2&branchName=master)
+<img src="https://dev.azure.com/clintlandry/LBC/_apis/build/status/CTLandry.LBC.iOS?branchName=master" />
 
 ## License
 
