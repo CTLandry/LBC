@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using LBC.Services.Authentication.Common;
 using LBC.Services.Authentication.SocialAuth;
 using LBC.Services.Caching;
 using LBC.Services.User.Session;
 using LBC.ViewModels.Base;
 using Prism.Commands;
-using Xamarin.Forms;
+using Xamarin.Essentials;
+
 
 namespace LBC.ViewModels
 {
@@ -16,6 +16,13 @@ namespace LBC.ViewModels
         private ISession _session;
         private ISocialAuth _authentication;
         private ICache _caching;
+
+        private double opacity = 0.0;
+        public double Opacity
+        {
+            get { return opacity; }
+            set { SetProperty(ref opacity, value); }
+        }
 
         public DelegateCommand<string> AuthenticateCommand { get; private set; }
 
@@ -28,6 +35,7 @@ namespace LBC.ViewModels
             _caching = cache;
             AuthenticateCommand =  new DelegateCommand<string>(async (type) => await Authenticate(type));
             Task.Run(async () => await Init());
+          
         }
 
         private async Task Init()
@@ -35,7 +43,14 @@ namespace LBC.ViewModels
             await _session.LoadSession(_caching);
             if(await _session.SessionIsValid())
             {
-                App.Current.MainPage = new AppShell();
+                MainThread.BeginInvokeOnMainThread(() =>
+                {
+                    App.Current.MainPage = new AppShell();
+                });
+            }
+            else
+            {
+                Opacity = 1.0;
             }
 
         }

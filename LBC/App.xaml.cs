@@ -1,4 +1,5 @@
 ﻿using System.Threading;
+using System.Threading.Tasks;
 using LBC.Configuration.Configs;
 using LBC.Infrastructure.Logging;
 using LBC.Services.Authentication.Common;
@@ -31,8 +32,6 @@ namespace LBC
             InitializeComponent();
             App.Current.MainPage = new SplashView();
         }
-
-        
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
