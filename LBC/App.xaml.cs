@@ -46,7 +46,6 @@ namespace LBC
             containerRegistry.RegisterSingleton<ICache, CachingService>();
             containerRegistry.RegisterSingleton<ISession, Session>();
             containerRegistry.RegisterSingleton<ISocialAuth, SocialAuthenticationService>();
-
         }
     }
 }
