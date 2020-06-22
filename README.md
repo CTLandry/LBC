@@ -11,12 +11,14 @@ Intended Feature List
 
 ## Build Status
 
-|     Build       |            Status           |
+|                 |         Build Status        |
 | --------------- | --------------------------- |
-| Android Master  | <img src="https://dev.azure.com/clintlandry/LBC/_apis/build/status/CTLandry.LBC.android.master?branchName=master" /> |
-| iOS Master      | <img src="https://dev.azure.com/clintlandry/LBC/_apis/build/status/CTLandry.LBC.ios.master?branchName=master" /> |
-| Android Release | <img src="https://dev.azure.com/clintlandry/LBC/_apis/build/status/CTLandry.LBC.android.release?branchName=release" /> |
-| iOS Release     | <img src="https://dev.azure.com/clintlandry/LBC/_apis/build/status/CTLandry.LBC.ios.release?branchName=release" /> |
+|   **Master**    | --------------------------- |
+|    Android      | <img src="https://dev.azure.com/clintlandry/LBC/_apis/build/status/CTLandry.LBC.android.master?branchName=master" /> |
+|      iOS        | <img src="https://dev.azure.com/clintlandry/LBC/_apis/build/status/CTLandry.LBC.ios.master?branchName=master" /> |
+|  **Release**    | --------------------------- |
+|    Android      | <img src="https://dev.azure.com/clintlandry/LBC/_apis/build/status/CTLandry.LBC.android.release?branchName=release" /> |
+|      iOS        | <img src="https://dev.azure.com/clintlandry/LBC/_apis/build/status/CTLandry.LBC.ios.release?branchName=release" /> |
 
 
 
