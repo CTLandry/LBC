@@ -17,7 +17,7 @@ Intended Feature List
 
 **iOS** 
 
-<img src="https://dev.azure.com/clintlandry/LBC/_apis/build/status/CTLandry.LBC.iOS?branchName=master" />
+<img src="https://dev.azure.com/clintlandry/LBC/_apis/build/status/CTLandry.LBC.IOS?branchName=master" />
 
 ## License
 
