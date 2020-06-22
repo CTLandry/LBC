@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="LBC.Views.ChatView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    Title="The Lounge"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    BackgroundColor="Transparent">
+    <AbsoluteLayout>
+
+        <Image
+            Aspect="AspectFill"
+            HeightRequest="1000"
+            Opacity=".50"
+            Source="splash"
+            WidthRequest="1000" />
+
+    </AbsoluteLayout>
+
+</ContentPage>
+

@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     prism:ViewModelLocator.AutowireViewModel="True">
-    <Grid BackgroundColor="#000000">
+    <Grid BackgroundColor="#000000" Opacity="{Binding Opacity}">
         <Grid.RowDefinitions>
             <RowDefinition Height="120" />
             <RowDefinition Height="230" />

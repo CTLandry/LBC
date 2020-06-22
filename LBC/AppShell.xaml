@@ -4,9 +4,11 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-    xmlns:local="clr-namespace:LBC.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:views="clr-namespace:LBC.Views"
     Title="LBC"
+    BackgroundColor="Transparent"
+    BackgroundImageSource="splash.png"
     mc:Ignorable="d">
     <!--
         Styles and Resources
@@ -19,13 +21,13 @@
             <Color x:Key="Platinum">#E5E5E5</Color>
             <Color x:Key="White">#FFFFFF</Color>
             <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.BackgroundColor" Value="{StaticResource OrangeWeb}" />
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource OxfordBlue}" />
                 <Setter Property="Shell.ForegroundColor" Value="White" />
-                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="{StaticResource Platinum}" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Platinum}" />
-                <Setter Property="Shell.TabBarForegroundColor" Value="White" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource OxfordBlue}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource Platinum}" />
                 <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF" />
                 <Setter Property="Shell.TabBarTitleColor" Value="White" />
             </Style>
@@ -33,14 +35,16 @@
         </ResourceDictionary>
     </Shell.Resources>
     <!--  Your Pages  -->
-    <!--<TabBar>
-        <Tab Title="Browse" Icon="tab_feed.png">
-            <ShellContent ContentTemplate="{DataTemplate local:ItemsPage}" />
-        </Tab>
-        <Tab Title="About" Icon="tab_about.png">
-            <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
-        </Tab>
-    </TabBar>-->
+    <Tab Title="TripOverview" Icon="">
+        <ShellContent>
+            <views:TripOverviewView />
+        </ShellContent>
+    </Tab>
+    <Tab Title="Chat" Icon="">
+        <ShellContent>
+            <views:ChatView />
+        </ShellContent>
+    </Tab>
     <!-- Optional Templates
     // These may be provided inline as below or as separate classes.
 
