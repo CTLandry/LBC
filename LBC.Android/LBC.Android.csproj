@@ -34,8 +34,6 @@
     <AndroidLinkMode>None</AndroidLinkMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>portable</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <DefineConstants>PROD</DefineConstants>
@@ -43,6 +41,11 @@
     <WarningLevel>4</WarningLevel>
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidKeyStore>True</AndroidKeyStore>
+    <AndroidSigningKeyStore>/Users/cland/Library/Developer/Xamarin/Keystore/LBC/LBC.keystore</AndroidSigningKeyStore>
+    <AndroidSigningStorePass>Hwhtgmtr1!</AndroidSigningStorePass>
+    <AndroidSigningKeyAlias>LBC</AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>Hwhtgmtr1!</AndroidSigningKeyPass>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
