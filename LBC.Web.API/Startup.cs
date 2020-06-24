@@ -1,13 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.KeyVault;
+using Microsoft.Azure.Services.AppAuthentication;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.AzureKeyVault;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -38,24 +35,21 @@ namespace LBC.Web.API
             {
                 o.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
             })
-                .AddCookie()
-                //.AddFacebook(fb =>
-                //{
-                //    fb.AppId = Configuration["FacebookAppId"];
-                //    fb.AppSecret = Configuration["FacebookAppSecret"];
-                //    fb.SaveTokens = true;
-                //})
-                .AddGoogle(options =>
-                {
-                    IConfigurationSection googleAuthNSection =
-                    Configuration.GetSection("Authentication:Google");
+               .AddCookie()
+               //.AddFacebook(fb =>
+               //{
+               //    fb.AppId = Configuration["FacebookAppId"];
+               //    fb.AppSecret = Configuration["FacebookAppSecret"];
+               //    fb.SaveTokens = true;
+               //})
+               .AddGoogle(options =>
+               {
+                   options.ClientId = Configuration["GoogleClientId"];
+                   options.ClientSecret = Configuration["GoogleClientSecret"];
+                   options.SaveTokens = true;
+               });
 
-                    options.ClientId = googleAuthNSection["ClientId"];
-                    options.ClientSecret = googleAuthNSection["ClientSecret"];
-                    options.SaveTokens = true;
-                });
-               
-              
+
         }
 
        
@@ -64,6 +58,10 @@ namespace LBC.Web.API
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            }
+            else if (env.IsProduction())
+            {
+                app.UseHsts();
             }
 
             app.UseHttpsRedirection();
@@ -86,5 +84,7 @@ namespace LBC.Web.API
                 endpoints.MapControllers();
             });
         }
+
+        
     }
 }

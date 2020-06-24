@@ -7,7 +7,7 @@
   "authapisettings": {
     "timeout": 20,
     "maxbuffersize": 256000,
-    "socialauthendpoint": "https://localhost:5003/mobileauth/"
+    "socialauthendpoint": "https://lbc-web-api.azurewebsites.net/mobileauth/"
   },
     "cachesettings": {
       "barrelid": "lbcdev"
