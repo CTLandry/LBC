@@ -2,12 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <DockerComposeProjectPath>../docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>47c3b086-7749-40e5-9194-31428a817bd3</UserSecretsId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DefineConstants>TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.5.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="3.1.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="3.1.5" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.5" />
   </ItemGroup>
   <ItemGroup>
     <None Include="LBC.Web.API.csproj" />

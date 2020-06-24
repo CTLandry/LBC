@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  lbc.web.api:
+    image: ${DOCKER_REGISTRY-}lbcweb
+    build:
+      context: .
+      dockerfile: LBC.Web.API/Dockerfile
