@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Azure.KeyVault;
@@ -33,6 +34,9 @@ namespace LBC.Web.API
                      $"https://{builtConfig["KeyVaultName"]}.vault.azure.net/",
                      keyVaultClient,
                      new DefaultKeyVaultSecretManager());
+
+                 Debug.WriteLine($"https://{builtConfig["KeyVaultName"]}.vault.azure.net/");
+                 Debug.WriteLine("");
              }
          })
          .ConfigureWebHostDefaults(webBuilder =>
