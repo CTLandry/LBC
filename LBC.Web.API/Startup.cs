@@ -61,7 +61,7 @@ namespace LBC.Web.API
             }
             else if (env.IsProduction())
             {
-                app.UseHsts();
+                app.UseDeveloperExceptionPage();
             }
 
             app.UseHttpsRedirection();
