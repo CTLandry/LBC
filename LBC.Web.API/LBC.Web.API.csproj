@@ -21,5 +21,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="LBC.Web.API.csproj" />
+    <None Include="Properties\PublishProfiles\LBC-Web-API2 - Docker.pubxml.user" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
 </Project>
