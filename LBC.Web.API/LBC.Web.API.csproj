@@ -20,8 +20,8 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.AzureKeyVault" Version="3.1.5" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="LBC.Web.API.csproj" />
     <None Include="Properties\PublishProfiles\LBC-Web-API2 - Docker.pubxml.user" />
+    <None Include="LBC.Web.API.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\PublishProfiles\" />
