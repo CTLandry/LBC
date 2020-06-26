@@ -35,6 +35,7 @@ namespace LBC.Web.API
                      keyVaultClient,
                      new DefaultKeyVaultSecretManager());
 
+              
                  Debug.WriteLine($"https://{builtConfig["KeyVaultName"]}.vault.azure.net/");
                  Debug.WriteLine("");
              }
