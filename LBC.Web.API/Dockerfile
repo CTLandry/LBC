@@ -7,7 +7,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY LBC.Web.API/LBC.Web.API.csproj LBC.Web.API/
+
 RUN dotnet restore "LBC.Web.API/LBC.Web.API.csproj"
 COPY . .
 WORKDIR "/src/LBC.Web.API"
