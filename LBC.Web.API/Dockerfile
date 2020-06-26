@@ -9,8 +9,8 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
 COPY LBC.Web.API.csproj LBC.Web.API/
 RUN dotnet restore "LBC.Web.API/LBC.Web.API.csproj"
-COPY . .
 WORKDIR "/src/LBC.Web.API"
+COPY . .
 RUN dotnet build "LBC.Web.API.csproj" -c Release -o /app/build
 
 FROM build AS publish
