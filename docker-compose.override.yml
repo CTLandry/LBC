@@ -3,8 +3,8 @@ version: '3.4'
 services:
   lbc.web.api:
     environment:
-      - ASPNETCORE_ENVIRONMENT=Production
-      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:8081
       - KeyVaultName=lbcvault
     ports:
       - "8081"

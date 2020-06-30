@@ -9,9 +9,9 @@
     <DefineConstants>TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.5.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.5.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.5.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.5.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.5.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="3.1.5" />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="3.1.5" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.5" />
