@@ -23,8 +23,8 @@ namespace LBC.Web.API
              {
                  if (context.HostingEnvironment.IsProduction())
                  {
-                     var builtConfig = config.Build();
 
+                     var builtConfig = config.Build();
                      var azureServiceTokenProvider = new AzureServiceTokenProvider();
                      var keyVaultClient = new KeyVaultClient(
                          new KeyVaultClient.AuthenticationCallback(
@@ -39,6 +39,7 @@ namespace LBC.Web.API
                      Debug.WriteLine($"https://{builtConfig["KeyVaultName"]}.vault.azure.net/");
                      Debug.WriteLine("");
                  }
+                
              })
              .ConfigureWebHostDefaults(webBuilder =>
              {
